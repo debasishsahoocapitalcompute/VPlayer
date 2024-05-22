@@ -1,36 +1,15 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Architecture
+- Whole Application is built using Next.js (App Router). And only the required components are client rendered, rest of the parts are server rendered
+- One of the most important piece of the app (Video Player) is implemented using a package called Next Video
+- The home page it self is server rendered, so the initial data in fetched at server. And once we add more videos, we revalidate the home path to clear the cache and bring on the new data
+- Since it is a small app, we have added all UI components inside the UI folder and all the user inputs are shown as dialogs. However, we still have option to break the app down in dynamic routes and slugs.
+- For CSS and UI Elements, we have used Shadcn Library and Tailwind, as they work well with each other
 
-## Getting Started
+# Features
+- See list of videos and player it then and there
+- if we need more controls, then we can full screen and we have speed, skip, picture-in-picture options
+- We can add more videos by providing direct .mp4 links (For testing : http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4)
+- Lastly, we can open the comments. Read others comments and comment our thoughts too
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+# Run it locally
+- Clone the repo to local environment. Open terminal at the cloned folder. Type "npm run dev" in the terminal and hit Enter. The app will be running on port choosed by your dev environment
