@@ -13,3 +13,7 @@
 
 # Run it locally
 - Clone the repo to local environment. Open terminal at the cloned folder. Type "npm run dev" in the terminal and hit Enter. The app will be running on port choosed by your dev environment
+
+# Screenshots
+![Full Width](/Screenshots/LearnwellFullPage.jpeg)
+![Full Width](/Screenshots/Learnwell.jpeg)
