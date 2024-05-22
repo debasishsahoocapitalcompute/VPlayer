@@ -52,7 +52,7 @@ async function getAllCommentsPerVideo(videoId: string) {
 export const VideoCard = async ({ videoObj }: { videoObj: videoObject }) => {
     const data = await getAllCommentsPerVideo(videoObj.id)
     return (
-        <Card key={videoObj.id} className="w-[32%] max-h-[550px] flex flex-col">
+        <Card key={videoObj.id} className="w-full md:w-[32%] min-h-full flex flex-col">
             <CardHeader>
                 <Video src={videoObj.video_url} className="rounded-lg w-full" />
             </CardHeader>

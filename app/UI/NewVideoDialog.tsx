@@ -49,18 +49,18 @@ export const NewVideoDialog = () => {
         }
     }
     return (
-        <div className="w-full flex justify-between items-center">
+        <div className="w-full flex md:flex-row flex-col justify-between items-center">
             <div className="mb-5">
-            <Image
-                src={LogoColor}
-                alt="Picture of the author"
-                className="w-40 relative"
-            />
-            <p className="text-xs absolute top-[78px] left-[92px] text-slate-500">The first learning place for your kids</p>
+                <Image
+                    src={LogoColor}
+                    alt="Picture of the author"
+                    className="w-40 relative"
+                />
+                <p className="text-xs absolute hidden md:block md:top-[78px] md:left-[92px] text-slate-500">The first learning place for your kids</p>
             </div>
             <Dialog>
                 <DialogTrigger asChild>
-                    <Button variant="default" className="w-32">Add new Video</Button>
+                    <Button variant="default" className="w-full md:w-32">Add new Video</Button>
                 </DialogTrigger>
                 <DialogContent>
                     <DialogHeader>
