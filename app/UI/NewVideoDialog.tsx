@@ -71,7 +71,7 @@ export const NewVideoDialog = () => {
                     <Input type="text" placeholder="Description" onChange={(e) => setDescription(e.target.value)} value={description} />
                     <Input type="text" placeholder="URL" onChange={(e) => setUrl(e.target.value)} value={url} />
                     <DialogFooter>
-                        <Button className="w-full" onClick={handlePostVideo}>{loading ? "Loading.." : "Upload"}</Button>
+                        <Button className="w-full" disabled={title === "" || description === "" || url === ""} onClick={handlePostVideo}>{loading ? "Loading.." : "Upload"}</Button>
                     </DialogFooter>
                 </DialogContent>
             </Dialog>

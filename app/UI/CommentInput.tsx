@@ -37,7 +37,7 @@ export const CommentInput = ({videoId} : {videoId : string}) => {
     return (
         <div className="flex gap-2 w-full items-center">
             <Input type="text" placeholder="Your comment here" onChange={(e) => setComment(e.target.value)} value={comment} />
-            <Button type="submit" onClick={handleSubmit}>{loading ? "Loading.." : "Comment"}</Button>
+            <Button type="submit" disabled={comment === ""} onClick={handleSubmit}>{loading ? "Loading.." : "Comment"}</Button>
         </div>
     )
 }
