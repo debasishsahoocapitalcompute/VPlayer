@@ -2,7 +2,7 @@ import { NewVideoDialog } from "./UI/NewVideoDialog";
 import { VideoCard, videoObject } from './UI/VideoCard';
 
 async function getAllVideos() {
-  const res = await fetch('https://take-home-assessment-423502.uc.r.appspot.com/api/videos?user_id=debasish_sahoo', {
+  const res = await fetch('https://take-home-assessment-423502.uc.r.appspot.com/api/videos?user_id=scott_shaw', {
     method: "GET"
   })
   if (!res.ok) {

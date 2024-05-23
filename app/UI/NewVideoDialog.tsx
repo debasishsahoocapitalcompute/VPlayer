@@ -23,7 +23,7 @@ async function postAllVideos(title: string, description: string, url: string) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-            user_id: "debasish_sahoo",
+            user_id: "scott_shaw",
             description: description,
             video_url: url,
             title: title
@@ -52,13 +52,13 @@ export const NewVideoDialog = () => {
     }
     return (
         <div className="w-full flex md:flex-row flex-col justify-between items-center">
-            <div className="mb-5">
+            <div className="mb-5 relative">
                 <Image
                     src={LogoColor}
                     alt="Picture of the author"
-                    className="w-40 relative"
+                    className="w-40"
                 />
-                <p className="text-xs absolute hidden md:block md:top-[78px] md:left-[92px] text-slate-500">The first learning place for your kids</p>
+                <p className="text-xs absolute hidden md:block md:top-[38px] md:left-[50px] text-slate-500 w-max">The first learning place for your kids</p>
             </div>
             <div className="flex gap-2">
                 <Dialog>

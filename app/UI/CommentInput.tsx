@@ -12,7 +12,7 @@ async function submitComment(comment: string, videoId: string) {
         body: JSON.stringify({
             video_id: videoId,
             content: comment,
-            user_id: "debasish_sahoo"
+            user_id: "scott_shaw"
         })
     })
     if (!res.ok) {
