@@ -73,6 +73,7 @@ export const NewVideoDialog = () => {
                         <Input type="text" placeholder="Title" onChange={(e) => setTitle(e.target.value)} value={title} />
                         <Input type="text" placeholder="Description" onChange={(e) => setDescription(e.target.value)} value={description} />
                         <Input type="text" placeholder="URL" onChange={(e) => setUrl(e.target.value)} value={url} />
+                        <p className="text-xs text-slate-500 italic">Testing URL : http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4</p>
                         <DialogFooter>
                             <Button className="w-full" disabled={title === "" || description === "" || url === ""} onClick={handlePostVideo}>{loading ? "Loading.." : "Upload"}</Button>
                         </DialogFooter>
