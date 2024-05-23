@@ -1,7 +1,9 @@
 'use client'
 
+import { Badge } from "@/components/ui/badge"
 import Image from "next/image";
 import LogoColor from "../Assets/LogoColor.png"
+import Profile from "../Assets/Profile.png"
 import { Button } from "@/components/ui/button"
 import {
     Dialog,
@@ -58,23 +60,33 @@ export const NewVideoDialog = () => {
                 />
                 <p className="text-xs absolute hidden md:block md:top-[78px] md:left-[92px] text-slate-500">The first learning place for your kids</p>
             </div>
-            <Dialog>
-                <DialogTrigger asChild>
-                    <Button variant="default" className="w-full md:w-32">Add new Video</Button>
-                </DialogTrigger>
-                <DialogContent>
-                    <DialogHeader>
-                        <DialogTitle>Add New Video (by link)</DialogTitle>
-                        <DialogDescription>*every field is necessary</DialogDescription>
-                    </DialogHeader>
-                    <Input type="text" placeholder="Title" onChange={(e) => setTitle(e.target.value)} value={title} />
-                    <Input type="text" placeholder="Description" onChange={(e) => setDescription(e.target.value)} value={description} />
-                    <Input type="text" placeholder="URL" onChange={(e) => setUrl(e.target.value)} value={url} />
-                    <DialogFooter>
-                        <Button className="w-full" disabled={title === "" || description === "" || url === ""} onClick={handlePostVideo}>{loading ? "Loading.." : "Upload"}</Button>
-                    </DialogFooter>
-                </DialogContent>
-            </Dialog>
+            <div className="flex gap-2">
+                <Dialog>
+                    <DialogTrigger asChild>
+                        <Button variant="default" className="w-full md:w-32">Add new Video</Button>
+                    </DialogTrigger>
+                    <DialogContent>
+                        <DialogHeader>
+                            <DialogTitle>Add New Video (by link)</DialogTitle>
+                            <DialogDescription>*every field is necessary</DialogDescription>
+                        </DialogHeader>
+                        <Input type="text" placeholder="Title" onChange={(e) => setTitle(e.target.value)} value={title} />
+                        <Input type="text" placeholder="Description" onChange={(e) => setDescription(e.target.value)} value={description} />
+                        <Input type="text" placeholder="URL" onChange={(e) => setUrl(e.target.value)} value={url} />
+                        <DialogFooter>
+                            <Button className="w-full" disabled={title === "" || description === "" || url === ""} onClick={handlePostVideo}>{loading ? "Loading.." : "Upload"}</Button>
+                        </DialogFooter>
+                    </DialogContent>
+                </Dialog>
+                <Badge variant="outline" className="h-10 rounded-md flex gap-2">
+                    <Image
+                        src={Profile}
+                        alt="Picture of the author"
+                        className="w-4 relative"
+                    />
+                    <p>Scott Shaw</p>
+                </Badge>
+            </div>
         </div>
     )
 }
