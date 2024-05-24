@@ -1,6 +1,6 @@
 'use client'
 
-import revalidateHomePage from "./RevalidateAction";
+import revalidateHomePage, { revalidateVideoPath } from "./RevalidateAction";
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
@@ -14,6 +14,7 @@ export const CommentInput = ({videoId} : {videoId : string}) => {
         const data = await submitComment(comment, videoId)
         if (data["success"] === "POST /videos/comments") {
             revalidateHomePage()
+            revalidateVideoPath(videoId)
             setLoading(false)
         } else {
             setLoading(false)

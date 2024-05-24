@@ -2,8 +2,9 @@
 - Whole Application is built using Next.js (App Router). And only the required components are client rendered, rest of the parts are server rendered
 - One of the most important piece of the app (Video Player) is implemented using a package called Next Video
 - The home page it self is server rendered, so the initial data in fetched at server. And once we add more videos, we revalidate the home path to clear the cache and bring on the new data
-- Since it is a small app, we have added all UI components inside the UI folder and all the user inputs are shown as dialogs. However, we still have option to break the app down in dynamic routes and slugs.
+- Since it is a small app, we have added all UI components inside the UI folder and all the user inputs are shown as dialogs. However, we also have individual pages of every video as specific dynamic routes (just click on the heading of the card to go to the full page)
 - For CSS and UI Elements, we have used Shadcn Library and Tailwind, as they work well with each other
+- We have included API URLs and other query related keys in environment variables and pushed it to repo as well, so it becomes easy in setup in local
 
 # Features
 - See list of videos and player it then and there
