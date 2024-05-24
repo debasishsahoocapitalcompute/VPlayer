@@ -4,22 +4,7 @@ import revalidateHomePage from "./RevalidateAction";
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
-
-async function submitComment(comment: string, videoId: string) {
-    const res = await fetch('https://take-home-assessment-423502.uc.r.appspot.com/api/videos/comments', {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-            video_id: videoId,
-            content: comment,
-            user_id: "scott_shaw"
-        })
-    })
-    if (!res.ok) {
-        throw new Error('Failed to fetch data')
-    }
-    return res.json()
-}
+import { submitComment } from "../Data/APICalls";
 
 export const CommentInput = ({videoId} : {videoId : string}) => {
     const [comment, setComment] = useState<string>("")
